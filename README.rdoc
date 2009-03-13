@@ -1,4 +1,4 @@
-= Ruby Gem: Secure Password Text class to generate secure random passwords.
+= WebGet.com Ruby PasswordText class to generate secure random passwords.
 
 Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
 Copyright:: Copyright (c) 2006-2009 Joel Parker Henderson

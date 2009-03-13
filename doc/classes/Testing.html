@@ -24,7 +24,7 @@
      <tr valign="top">
       <td class="small-title-font">In:</td>
       <td class="small-title-font">
-<a href="../files/test/unit/secure_password_text_test_rb.html">test/unit/secure_password_text_test.rb</a>
+<a href="../files/test/unit/password_text_test_rb.html">test/unit/password_text_test.rb</a>
       </td>
      </tr>
      <tr>
@@ -81,12 +81,12 @@ Test::Unit::TestCase
 <div class="sourcecode">
 <h2>Source Code</h2>
 <pre>
-    <span class="ruby-comment cmt"># File test/unit/secure_password_text_test.rb, line 6</span>
+    <span class="ruby-comment cmt"># File test/unit/password_text_test.rb, line 6</span>
  6:  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_all</span>
  7:   <span class="ruby-value">20</span>.<span class="ruby-identifier">times</span>{
- 8:    <span class="ruby-identifier">x</span>=<span class="ruby-constant">SecurePasswordText</span>.<span class="ruby-identifier">new</span>
+ 8:    <span class="ruby-identifier">x</span>=<span class="ruby-constant">PasswordText</span>.<span class="ruby-identifier">new</span>
  9:    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>))
-10:    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">length</span>,<span class="ruby-constant">SecurePasswordText</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNT</span>)
+10:    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">length</span>,<span class="ruby-constant">PasswordText</span><span class="ruby-operator">::</span><span class="ruby-constant">COUNT</span>)
 11:    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">=~</span><span class="ruby-regexp re">/^[a-z]+$/</span>,<span class="ruby-node">&quot;lowercase letters:#{x}&quot;</span>)
 12:   }
 13:  <span class="ruby-keyword kw">end</span>
