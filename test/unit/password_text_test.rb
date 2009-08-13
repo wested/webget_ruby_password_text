@@ -26,7 +26,7 @@ class PasswordTextTest < Test::Unit::TestCase
     PasswordText.chars=(chars)
     assert_equal(chars,PasswordText.chars)
     s=PasswordText.new
-    assert_equal(0,s=~/^[abc]$/)
+    assert_equal(0,s=~/^[abc]+$/)
   end
 
   def test_length
