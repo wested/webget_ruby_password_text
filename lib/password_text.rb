@@ -1,10 +1,5 @@
-# = WebGet.com Ruby PasswordText class to generate secure random passwords.
+# WebGet.com Ruby PasswordText class to generate secure random passwords.
 #
-# Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
-# Copyright:: Copyright (c) 2006-2009 Joel Parker Henderson
-# License:: CreativeCommons License, Non-commercial Share Alike
-# License:: LGPL, GNU Lesser General Public License
-
 # Password tool to create strong user-friendly passwords,
 # using Ruby's secure random cryptographic functions.
 #
@@ -25,11 +20,14 @@
 #
 # If SecureRandom is not defined, e.g. if you are using Ruby 1.8.6,
 # then we require our webget_ruby_secure_random gem which provides it.
-
-if !defined?(SecureRandom) then require 'secure_random' end
-
+# Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
+# Copyright:: Copyright (c) 2006-2009 Joel Parker Henderson
+# License:: CreativeCommons License, Non-commercial Share Alike
+# License:: LGPL, GNU Lesser General Public License
 
 class PasswordText < String
+
+ if !defined?(SecureRandom) then require 'secure_random' end
 
  # Default characters
  @@chars=['a','b','c','d','e','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z']
