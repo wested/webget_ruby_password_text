@@ -4,7 +4,7 @@
 # Copyright:: Copyright (c) 2006-2009 Joel Parker Henderson
 # License:: CreativeCommons License, Non-commercial Share Alike
 # License:: LGPL, GNU Lesser General Public License
-#
+
 # Password tool to create strong user-friendly passwords,
 # using Ruby's secure random cryptographic functions.
 #
@@ -23,10 +23,9 @@
 # to help people who use mobile phones and who have disabilities:
 # all lowercase and omitting "i", "l", "o" which look like numbers.
 #
-##
+# If SecureRandom is not defined, e.g. if you are using Ruby 1.8.6,
+# then we require our webget_ruby_secure_random gem which provides it.
 
-# Ruby 1.8.6 and older does not have a secure random_number method,
-# so we require our ruby_securerandom gem which provides the method.
 if !defined?(SecureRandom) then require 'secure_random' end
 
 
