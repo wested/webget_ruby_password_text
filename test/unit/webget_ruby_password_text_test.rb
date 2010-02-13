@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'password_text'
+require 'webget_ruby_password_text'
 
 class PasswordTextTest < Test::Unit::TestCase
 
