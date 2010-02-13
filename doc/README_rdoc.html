@@ -33,11 +33,9 @@
 				
 					<li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
 				
-					<li class="file"><a href="./README.html">README</a></li>
-				
 					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
 				
-					<li class="file"><a href="./password_text_gemspec.html">password_text.gemspec</a></li>
+					<li class="file"><a href="./webget_ruby_password_text_gemspec.html">webget_ruby_password_text.gemspec</a></li>
 				
 					<li class="file"><a href="./webget_ruby_password_text_sha512_txt.html">webget_ruby_password_text.sha512.txt</a></li>
 				
@@ -73,36 +71,12 @@
 	</div>
 
 	<div id="documentation">
-		<p>
-WebGet.com Ruby <a href="PasswordText.html">PasswordText</a> class to
-generate secure random passwords. # Password tool to create strong
-user-friendly passwords, using Ruby&#8217;s secure random cryptographic
-functions. #
-</p>
-<h2>Examples</h2>
-<pre>
-  PasswordText.new =&gt; &quot;avzwbnxremcd&quot;
-  PasswordText.new(4) =&gt; &quot;avzw&quot;
-  PasswordText.new(4,['x','y','z']) =&gt; &quot;yzyx&quot;
-</pre>
-<p>
-# <a href="PasswordText.html">PasswordText</a> is a string, so you can do
-string methods on it. You can change how passwords are randomly created
-however you want. # The default length is 12 to make a sufficiently strong
-password. for usual web applications. You can make this stronger as needed.
-</p>
-<p>
-The default character array is chosen for the best usability, to help
-people who use mobile phones and who have disabilities: all lowercase and
-omitting &#8220;i&#8221;, &#8220;l&#8221;, &#8220;o&#8221; which look like
-numbers. # If SecureRandom is not defined, e.g. if you are using Ruby
-1.8.6, then we require our webget_ruby_secure_random gem which provides it.
-</p>
+		<h1>WebGet.com Ruby <a href="PasswordText.html">PasswordText</a> class to generate secure random passwords.</h1>
 <table>
 <tr><td valign="top">Author:</td><td>Joel Parker Henderson, joelparkerhenderson@gmail.com
 
 </td></tr>
-<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2006-2009 Joel Parker Henderson
+<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2006-2010 Joel Parker Henderson
 
 </td></tr>
 <tr><td valign="top">License:</td><td>CreativeCommons License, Non-commercial Share Alike
@@ -112,6 +86,35 @@ numbers. # If SecureRandom is not defined, e.g. if you are using Ruby
 
 </td></tr>
 </table>
+<p>
+Password tool to create strong user-friendly passwords, using Ruby&#8217;s
+secure random cryptographic functions.
+</p>
+<h2>Examples</h2>
+<pre>
+  PasswordText.new =&gt; &quot;avzwbnxremcd&quot;
+  PasswordText.new(4) =&gt; &quot;avzw&quot;
+  PasswordText.new(4,['x','y','z']) =&gt; &quot;yzyx&quot;
+</pre>
+<p>
+<a href="PasswordText.html">PasswordText</a> is a string, so you can do
+string methods on it. You can change how passwords are randomly created
+however you want.
+</p>
+<p>
+The default length is 12 to make a sufficiently strong password. for usual
+web applications. You can make this stronger as needed.
+</p>
+<p>
+The default character array is chosen for the best usability, to help
+people who use mobile phones and who have disabilities: all lowercase and
+omitting &#8220;i&#8221;, &#8220;l&#8221;, &#8220;o&#8221; which look like
+numbers.
+</p>
+<p>
+If SecureRandom is not defined, e.g. if you are using Ruby 1.8.6, then we
+require our webget_ruby_secure_random gem which provides it.
+</p>
 
 	</div>
 

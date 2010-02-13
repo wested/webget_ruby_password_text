@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name              = "webget_ruby_password_text"
-  s.summary           = "Generate secure password text generator for strong web-savvy passwords"
+  s.summary           = "WebGet Ruby Gem: Password text generator for strong web-savvy passwords"
   s.version           = "1.2.0"
   s.author            = "WebGet"
   s.email             = "webget@webget.com"

@@ -1,6 +1,6 @@
 =begin rdoc
 
-= WebGet.com Ruby PasswordText class to generate secure random passwords.
+= WebGet Ruby Gem: PasswordText class to generate secure random passwords.
 
 Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
 Copyright:: Copyright (c) 2006-2010 Joel Parker Henderson
