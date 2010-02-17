@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.require_path      = 'lib'
   s.has_rdoc          = true
   s.files             = ['lib/webget_ruby_password_text.rb']
-  s.test_files        = ['test/unit/webget_ruby_password_text_test.rb']
+  s.test_files        = ['test/webget_ruby_password_text_test.rb']
 
   s.add_dependency('bcrypt-ruby', '>= 2.0.5')
   s.add_dependency('webget_ruby_secure_random', '>= 1.2.0') # for Ruby 1.8.6
