@@ -25,15 +25,20 @@ The default character array is chosen for the best usability,
 to help people who use mobile phones and who have disabilities:
 all lowercase and omitting "i", "l", "o" which look like numbers.
 
-If SecureRandom is not defined, e.g. if you are using Ruby 1.8.6,
-then we require our webget_ruby_secure_random gem which provides it.
+==SecureRandom
+
+Ruby 1.8.6 and older does not have a secure random number method,
+so this gem checks to see if the SecureRandom class is defined;
+if it is not, then we require our webget_ruby_secure_random gem.
 
 =end
 
 
+if !defined?(SecureRandom) then require 'webget_ruby_secure_random' end
+
+
 class PasswordText < String
 
- if !defined?(SecureRandom) then require 'webget_ruby_secure_random' end
 
  # Default characters
  @@chars=['a','b','c','d','e','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z']
@@ -55,7 +60,7 @@ class PasswordText < String
  #   PasswordText.new => "avzwbnxremcd"
  #   PasswordText.new(4) => "avzw"
  #   PasswordText.new(4,['x','y','z']) => "yzyx"
-  
+
  def initialize(length=@@length,chars=@@chars)
    super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
  end
