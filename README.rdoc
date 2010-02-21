@@ -1,32 +1,28 @@
 
-= WebGet Ruby Gem: PasswordText class to generate secure random passwords.
+= WebGet Ruby Gem: Generate secure random passwords.
 
 Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
 Copyright:: Copyright (c) 2006-2010 Joel Parker Henderson
 License:: CreativeCommons License, Non-commercial Share Alike
 License:: LGPL, GNU Lesser General Public License
 
-Password tool to create strong user-friendly passwords,
-using Ruby's secure random cryptographic functions.
+Generates strong yet user-friendly passwords using Ruby's secure random cryptographic functions.
 
-==Examples
-  PasswordText.new => "avzwbnxremcd"
-  PasswordText.new(4) => "avzw"
-  PasswordText.new(4,['x','y','z']) => "yzyx"
+You can change how passwords are created using the optional parameters and the return value is a string, so you can do string methods on it.
 
-PasswordText is a string, so you can do string methods on it.
-You can change how passwords are randomly created however you want.
+The default length is 12 characters, which is sufficiently strong for most web applications. You can make this stronger as needed.
 
-The default length is 12 to make a sufficiently strong password.
-for usual web applications. You can make this stronger as needed.
+The default character array is optimized for usability and accessibility, to help mobile phone users and people with disabilities: all letters are lowercase and letters that look like numbers (specifically, "i", "l", "o") are not used.
 
-The default character array is chosen for the best usability,
-to help people who use mobile phones and who have disabilities:
-all lowercase and omitting "i", "l", "o" which look like numbers.
+== Method
+* new: optional, named parameters are length (integer) and alternate character set (array of characters, which forces the password to contain only characters from the passed array)
 
-==SecureRandom
+== Examples
+  pt = PasswordText.new => "avzwbnxremcd"
+  pt4 = PasswordText.new(:length => 4) => "avzw"
+  pt4a = PasswordText.new(:length => 4, :chars => ['x','y','z']) => "yzyx"
 
-Ruby 1.8.6 and older does not have a secure random number method,
-so this gem checks to see if the SecureRandom class is defined;
-if it is not, then we require our webget_ruby_secure_random gem.
+== SecureRandom
+
+Ruby 1.8.6 and older does not include a secure random number method so this gem checks to see if the SecureRandom class is defined and, if not, requires the webget_ruby_secure_random gem (http://github.com/webget/webget_ruby_secure_random).
 

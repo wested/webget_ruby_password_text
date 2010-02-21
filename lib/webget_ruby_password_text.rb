@@ -61,7 +61,13 @@ class PasswordText < String
  #   PasswordText.new(4) => "avzw"
  #   PasswordText.new(4,['x','y','z']) => "yzyx"
 
- def initialize(length=@@length,chars=@@chars)
+ # DEPRECATED, BREAKS CURRENT IMPLEMENTATION
+ # def initialize(length=@@length,chars=@@chars)
+ #   super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
+ # end
+ def initialize(opts={})
+   @@length ||= opts[:length],
+   @@chars ||= opts[:chars]
    super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
  end
 
