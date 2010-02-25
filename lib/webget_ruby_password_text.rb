@@ -16,12 +16,13 @@ The default length is 12 characters, which is sufficiently strong for most web a
 The default character array is optimized for usability and accessibility, to help mobile phone users and people with disabilities: all letters are lowercase and letters that look like numbers (specifically, "i", "l", "o") are not used.
 
 == Method
+
 * new: optional, named parameters are length (integer) and alternate character set (array of characters, which forces the password to contain only characters from the passed array)
 
 == Examples
-  pt = PasswordText.new => "avzwbnxremcd"
-  pt4 = PasswordText.new(:length => 4) => "avzw"
-  pt4a = PasswordText.new(:length => 4, :chars => ['x','y','z']) => "yzyx"
+  password = PasswordText.new => "avzwbnxremcd"
+  password = PasswordText.new(:length => 4) => "avzw"
+  password = PasswordText.new(:length => 4, :chars => ['x','y','z']) => "yzyx"
 
 == SecureRandom
 
@@ -53,10 +54,10 @@ class PasswordText < String
  # To set the default character array, see #chars
  #
  # ==Examples
- #   PasswordText.new => "avzwbnxremcd"
- #   PasswordText.new(4) => "avzw"
- #   PasswordText.new(4,['x','y','z']) => "yzyx"
-
+ #   password = PasswordText.new => "avzwbnxremcd"
+ #   password = PasswordText.new(4) => "avzw"
+ #   password = PasswordText.new(4,['x','y','z']) => "yzyx"
+ #
  # DEPRECATED, BREAKS CURRENT IMPLEMENTATION
  # def initialize(length=@@length,chars=@@chars)
  #   super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
