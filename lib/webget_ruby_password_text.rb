@@ -16,13 +16,12 @@ The default length is 12 characters, which is sufficiently strong for most web a
 The default character array is optimized for usability and accessibility, to help mobile phone users and people with disabilities: all letters are lowercase and letters that look like numbers (specifically, "i", "l", "o") are not used.
 
 == Method
-
 * new: optional, named parameters are length (integer) and alternate character set (array of characters, which forces the password to contain only characters from the passed array)
 
 == Examples
-  password = PasswordText.new => "avzwbnxremcd"
-  password = PasswordText.new(:length => 4) => "avzw"
-  password = PasswordText.new(:length => 4, :chars => ['x','y','z']) => "yzyx"
+  pt = PasswordText.new => "avzwbnxremcd"
+  pt4 = PasswordText.new(:length => 4) => "avzw"
+  pt4a = PasswordText.new(:length => 4, :chars => ['x','y','z']) => "yzyx"
 
 == SecureRandom
 
@@ -51,19 +50,15 @@ class PasswordText < String
  #
  # To set the default length, see #length.
  #
- # To set the default character array, see #chars
- #
- # ==Examples
- #   password = PasswordText.new => "avzwbnxremcd"
- #   password = PasswordText.new(4) => "avzw"
- #   password = PasswordText.new(4,['x','y','z']) => "yzyx"
- #
- # DEPRECATED, BREAKS CURRENT IMPLEMENTATION
- # def initialize(length=@@length,chars=@@chars)
- #   super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
- # end
+ # To set the default character array, see #chars.
+ # 
+ # @example
+ #   PasswordText.new => "avzwbnxremcd"
+ #   PasswordText.new(4) => "avzw"
+ #   PasswordText.new(4,["x","y","z"]) => "yzyx"
+
  def initialize(opts={})
-   @@length ||= opts[:length],
+   @@length ||= opts[:length]
    @@chars ||= opts[:chars]
    super(Array.new(length){chars[SecureRandom.random_number(chars.size)]}.join)
  end
@@ -76,6 +71,8 @@ class PasswordText < String
  # We also omit letters that may be confused with numbers: "i", "l", "o".
  #
  # We choose this as a valuable tradeoff between usability and complexity.
+ # 
+ # @return [Array] valid characters
 
  def self.chars
   @@chars
@@ -83,6 +80,11 @@ class PasswordText < String
 
 
  # Set the default character array
+ # 
+ # @return [Array] valid characters
+ # 
+ # @example
+ #  PasswordText.chars = ["x","y","z"]
 
  def self.chars=(chars)
   @@chars=chars
@@ -93,6 +95,8 @@ class PasswordText < String
  #
  # We choose 12 characters to make a sufficiently strong password.
  # for usual web applications. You can make this stronger as needed.
+ # 
+ # @return [Integer] default password length
 
  def self.length
   @@length||=12
@@ -100,11 +104,14 @@ class PasswordText < String
 
 
  # Set the default length
+ # 
+ # @return [Integer] default password length
+ # 
+ # @example:
+ #  PasswordText.length=16
 
  def self.length=(length)
   @@length=length
  end
 
 end
-
-

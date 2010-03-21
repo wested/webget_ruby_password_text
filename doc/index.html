@@ -1,86 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Documentation by YARD 0.5.3</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
-	<title>webget_ruby_password_text</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
 
-	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
 
-	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>WebGet Ruby Gem: Generate secure random passwords.</h1>
+<table>
+<tr><td valign="top">Author:</td><td>Joel Parker Henderson, joelparkerhenderson@gmail.com
 
-</head>
-<body class="indexpage">
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2006-2010 Joel Parker Henderson
 
-	
-	<h1>webget_ruby_password_text</h1>
+</td></tr>
+<tr><td valign="top">License:</td><td>CreativeCommons License, Non-commercial Share Alike
 
-	
-	<p>This is the API documentation for 'webget_ruby_password_text'.</p>
-	
+</td></tr>
+<tr><td valign="top">License:</td><td>LGPL, GNU Lesser General Public License
 
-	
-	
-	<h2>Files</h2>
-	<ul>
-		
-			<li class="file"><a href="INSTALL_txt.html">INSTALL.txt</a></li>
-		
-			<li class="file"><a href="LICENSE_txt.html">LICENSE.txt</a></li>
-		
-			<li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
-		
-			<li class="file"><a href="webget_ruby_password_text_gemspec.html">webget_ruby_password_text.gemspec</a></li>
-		
-			<li class="file"><a href="webget_ruby_password_text_sha512_txt.html">webget_ruby_password_text.sha512.txt</a></li>
-		
-	</ul>
-	
+</td></tr>
+</table>
+<p>
+Generates strong yet user-friendly passwords using Ruby&#8217;s secure
+random cryptographic functions.
+</p>
+<p>
+You can change how passwords are created using the optional parameters and
+the return value is a string, so you can do string methods on it.
+</p>
+<p>
+The default length is 12 characters, which is sufficiently strong for most
+web applications. You can make this stronger as needed.
+</p>
+<p>
+The default character array is optimized for usability and accessibility,
+to help mobile phone users and people with disabilities: all letters are
+lowercase and letters that look like numbers (specifically,
+&#8220;i&#8221;, &#8220;l&#8221;, &#8220;o&#8221;) are not used.
+</p>
+<h2>Method</h2>
+<ul>
+<li>new: optional, named parameters are length (integer) and alternate
+character set (array of characters, which forces the password to contain
+only characters from the passed array)
 
-	<h2>Classes/Modules</h2>
-	<ul>
-		
-		<li class="class"><a href="PasswordText.html">PasswordText</a></li>
-		
-		<li class="class"><a href="PasswordTextTest.html">PasswordTextTest</a></li>
-		
-	</ul>
+</li>
+</ul>
+<h2>Examples</h2>
+<pre class="code">
+  pt = PasswordText.new =&gt; &quot;avzwbnxremcd&quot;
+  pt4 = PasswordText.new(:length =&gt; 4) =&gt; &quot;avzw&quot;
+  pt4a = PasswordText.new(:length =&gt; 4, :chars =&gt; ['x','y','z']) =&gt; &quot;yzyx&quot;
+</pre>
+<h2>SecureRandom</h2>
+<p>
+Ruby 1.8.6 and older does not include a secure random number method so this
+gem checks to see if the SecureRandom class is defined and, if not,
+requires the webget_ruby_secure_random gem (<a
+href="http://github.com/webget/webget_ruby_secure_random">github.com/webget/webget_ruby_secure_random</a>).
+</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Mar 21 13:57:14 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.9.1).
+</div>
 
-	<h2>Methods</h2>
-	<ul>
-		
-			<li><a href="PasswordText.html#M000006">::chars &mdash; PasswordText</a></li>
-		
-			<li><a href="PasswordText.html#M000007">::chars= &mdash; PasswordText</a></li>
-		
-			<li><a href="PasswordText.html#M000008">::length &mdash; PasswordText</a></li>
-		
-			<li><a href="PasswordText.html#M000009">::length= &mdash; PasswordText</a></li>
-		
-			<li><a href="PasswordText.html#M000003">::new &mdash; PasswordText</a></li>
-		
-			<li><a href="PasswordTextTest.html#M000004">#test_chars &mdash; PasswordTextTest</a></li>
-		
-			<li><a href="PasswordTextTest.html#M000000">#test_default &mdash; PasswordTextTest</a></li>
-		
-			<li><a href="PasswordTextTest.html#M000005">#test_length &mdash; PasswordTextTest</a></li>
-		
-			<li><a href="PasswordTextTest.html#M000001">#test_with_length &mdash; PasswordTextTest</a></li>
-		
-			<li><a href="PasswordTextTest.html#M000002">#test_with_length_and_characters &mdash; PasswordTextTest</a></li>
-		
-	</ul>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-</body>
+  </body>
 </html>
