@@ -32,7 +32,9 @@ Ruby 1.8.6 and older does not include a secure random number method so this gem 
 
 if !defined?(SecureRandom) then require 'webget_ruby_secure_random' end
 
-
+  # WebGet Ruby Gem: PasswordText class to generate secure random passwords.
+  # 
+  # Ruby 1.8.6 and older does not include a secure random number method so this gem checks to see if the SecureRandom class is defined and, if not, requires the webget_ruby_secure_random gem (http://github.com/webget/webget_ruby_secure_random).
 class PasswordText < String
 
 
@@ -51,7 +53,9 @@ class PasswordText < String
  # To set the default length, see #length.
  #
  # To set the default character array, see #chars.
- # 
+ # @param [Hash] opts options used to generate a password
+ # @option opts [Integer] :length (16) to override class value for length of generated password
+ # @option opts [Array] :chars (@@chars) to override class value for set of characters usable in generated password
  # @example
  #   PasswordText.new => "avzwbnxremcd"
  #   PasswordText.new(4) => "avzw"
@@ -82,7 +86,7 @@ class PasswordText < String
  # Set the default character array
  # 
  # @return [Array] valid characters
- # 
+ # @param [Array] chars to use for generating passwords
  # @example
  #  PasswordText.chars = ["x","y","z"]
 
@@ -106,8 +110,8 @@ class PasswordText < String
  # Set the default length
  # 
  # @return [Integer] default password length
- # 
- # @example:
+ # @param [Integer] length to use as length of generated passwords
+ # @example
  #  PasswordText.length=16
 
  def self.length=(length)
