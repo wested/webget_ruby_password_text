@@ -54,7 +54,7 @@ class PasswordText < String
  #
  # To set the default character array, see #chars.
  # @param [Hash] opts options used to generate a password
- # @option opts [Integer] :length (16) to override class value for length of generated password
+ # @option opts [Integer] :length (12) to override class value for length of generated password
  # @option opts [Array] :chars (@@chars) to override class value for set of characters usable in generated password
  # @example
  #   PasswordText.new => "avzwbnxremcd"
